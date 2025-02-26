@@ -20,9 +20,21 @@
 
         socket.emit('mensaje', {nombre: 'Jorge'});
 
-        socket.on('mensaje', function(payload){
+        socket.on('nuevo-mensaje', function(payload){
             console.log('Respuesta', payload);
         });
+
+        socket.on('vote-band', function(payload){
+            console.log('Respuesta', payload);
+        });
+
+        socket.on('active-bands', function(Bands){
+            console.clear();
+            console.table( Bands);
+        });
+
+
+
 
     </script>
 </body>
